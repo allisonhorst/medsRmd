@@ -1,0 +1,34 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# medsRmd
+
+This package adds a template called 'ucsbmeds' to the .Rmd templates list, which is consistent in theme to existing MEDS materials. 
+
+## Installation 
+
+Install from github with: 
+
+`devtools::install_github("allisonhorst/medsRmd")`
+
+## Using the template
+
+- After installing the package, restart R and RStudio
+- Make your themed R Markdown doc with: New file > R Markdown > Choose FROM TEMPLATE in the left sidebar, then choose the `ucsbmeds` template in the dropdown list
+- Create your .Rmd, knit to see the built-in template with examples of some common features. 
+
+## Issues / requests
+
+Submit issues [here](https://github.com/allisonhorst/medsRmd/issues).
