@@ -1,0 +1,20 @@
+Package: medsRmd
+Title: An R Markdown template for MEDS documents
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Allison",
+           family = "Horst",
+           role = c("aut", "cre"),
+           email = "ahorst@ucsb.edu"),
+      person(given = "Jamie",
+           family = "Montgomery",
+           role = c("aut"),
+           email = "jmontgomery@ucsb.edu")
+      )
+Description: Creates an Add-on template consistent with existing MEDS materials that is applied to .Rmd documents. 
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1

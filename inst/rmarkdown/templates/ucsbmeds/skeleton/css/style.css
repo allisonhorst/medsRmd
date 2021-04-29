@@ -1,0 +1,78 @@
+/******
+ucsbmeds
+*******/
+
+/*-------- Google font imports --------*/
+
+/* Font options: Sanchez (headers / serif), Nunito Sans (body / sans-serif), Roboto Mono (code) */
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;900&display=swap');
+
+/* Code font (Roboto Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+/*-------- Background color & body font --------*/
+body {
+  background-color: white;
+  font-family: Nunito Sans;
+  color: black;
+  font-size: 13px;
+}
+
+/* ---- Overall report title and subtitle ---- */
+
+h1.title {
+  font-family: Sanchez;
+  font-size: 30px;
+  color: white;
+  background-color: #003660;
+  padding: 15px;
+}
+
+h3.subtitle{
+  font-family: Nunito Sans;
+  font-size: 18px;
+  color: black;
+}
+
+/* --- Author & date --- */
+
+h4.author, h4.date {
+  color: dimgray;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/*-------- Body headers and text --------*/
+
+h1 {
+  font-family: Sanchez;
+  font-size: 26px;
+  color: #003660;
+}
+
+h2 {
+  font-family: Sanchez;
+  font-size: 22px;
+  color: rgba(4, 124, 145, 1);
+}
+
+h3 {
+  font-family: Sanchez;
+  font-size: 18px;
+  color: rgba(4, 124, 145, 1);
+}
+
+p {
+  font-size: 13px;
+}
+
+code {
+  font-family: Roboto Mono;
+  font-size: 13px;
+  background-color: #ececec;
+}
+
+
+
