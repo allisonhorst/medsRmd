@@ -1,0 +1,4 @@
+name: meds-html-template
+description: >
+   A UCSB MEDS-themed R Markdown template for producing non-paginated HTML
+create_dir: TRUE

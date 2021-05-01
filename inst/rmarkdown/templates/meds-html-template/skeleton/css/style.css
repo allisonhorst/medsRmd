@@ -64,8 +64,12 @@ h3 {
   color: rgba(4, 124, 145, 1);
 }
 
-p {
-  font-size: 13px;
+body {
+  font-size: 17px;
+}
+
+blockquote {
+    font-size: 16px;
 }
 
 code {
@@ -74,5 +78,34 @@ code {
   background-color: #ececec;
 }
 
+/*--- TOC formatting ---*/
 
+.list-group-item.active, .list-group-item.active:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: rgba(4, 124, 145, 1);
+    border-color: none;
+}
 
+.list-group-item.active:hover, .list-group-item:hover {
+  background-color: gainsboro;
+  color: black;
+}
+
+/*--- make TOC menu have square corners ---*/
+.tocify {
+  border-radius: 0px;
+}
+
+/*---move TOC down a bit ---*/
+/*issue here: if moving this down, it also has
+the top margin when the TOC is up top in smaller
+device view...so blank white space up top (not great) */
+
+div#TOC {
+    margin: 50px 0px 20px 0px;
+}
+
+div.tocify {
+    font-size: 13px
+}

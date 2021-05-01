@@ -1,0 +1,430 @@
+/******
+meds-pagedown-template css
+
+Full credit on this template and gratitude to David Keyes - code updated from from existing pagedreports package templates (https://github.com/rfortherestofus/pagedreport/)
+*******/
+
+/*-------- Google font imports --------*/
+
+/* Font options: Sanchez (headers / serif), Nunito Sans (body / sans-serif), Roboto Mono (code) */
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;900&display=swap');
+
+/* Code font (Roboto Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+/* --------------------------------- */
+/* CSS template for paged windmill */
+/* --------------------------------- */
+
+/* -------------------- CSS variables ---------------------- */
+:root {
+    --background: white;
+    --pagedjs-width: 210mm;
+    --pagedjs-height: 297mm;
+    --color-paper: white;
+    --color-mbox: rgba(0, 0, 0, 0.2);
+    --running-title-width: 2.5in;
+    --screen-pages-spacing: 5mm;
+    --main-color: #003660;
+    --second-color: #047C91;
+    --main-font: "Nunito Sans";
+    --header-font: "Sanchez";
+  }
+
+/* ---------------------- For debugging -------------------- */
+/* two pages in a row if possible on screen */
+@media screen {
+  body {
+      background-color: var(--background);
+      margin: var(--screen-pages-spacing) auto 0 auto;
+  }
+  .pagedjs_pages {
+      display: flex;
+      max-width: calc(var(--pagedjs-width) * 2);
+      flex: 0;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+  .pagedjs_page {
+      background-color: var(--color-paper);
+      box-shadow: 0 0 0 1px var(--color-mbox);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: auto auto var(--screen-pages-spacing) auto;
+  }
+}
+
+/* when a row can hold two pages, start first page on the right */
+@media screen and (min-width: 12.32in) {
+  .pagedjs_page {
+      margin: auto 0 var(--screen-pages-spacing) 0;
+  }
+  .pagedjs_first_page {
+      margin-left: var(--pagedjs-width);
+  }
+}
+
+/* ------------------------ Pages -------------------------- */
+/* page size */
+@page {
+    size: 210mm 297mm; /* var(--pagedjs-width) doesn't work in browser when printing */
+  }
+
+
+/* string variables */
+h1.title {
+  string-set: h1-title content(text);
+  padding-top: 150px;
+}
+
+.shorttitle1 {
+  string-set: h1-text content(text);
+}
+
+/* normal page */
+@page {
+
+  @top-left-corner {
+    content: "";
+    border-bottom: 1px solid var(--second-color);
+    margin-bottom: 0.1in;
+    height: 90px; /* change this on all top children here & below to move top horizontal line up/down */
+    border-bottom: 4px solid var(--second-color);
+    background-color: #EDEADF;
+  }
+
+  @top-left {
+    content: string(h1-title);
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--second-color);
+    margin-bottom: 0.1in;
+    height: 90px;
+    border-bottom: 4px solid var(--second-color);
+    background-color: #EDEADF;
+  }
+
+  @top-center {
+    content: "";
+    border-bottom: 1px solid var(--second-color);
+    margin-bottom: 0.1in;
+    height: 90px;
+    border-bottom: 4px solid var(--second-color);
+    background-color: #EDEADF;
+  }
+
+  @top-right {
+    content: string(h1-text);
+    font-family: "Nunito Sans";
+    color: var(--main-color);
+    border-bottom: 1px solid var(--second-color);
+    margin-bottom: 0.1in;
+    height: 90px;
+    border-bottom: 4px solid var(--second-color);
+    background-color: #EDEADF;
+  }
+
+  @top-right-corner {
+    content: "";
+    border-bottom: 1px solid var(--second-color);
+    margin-bottom: 0.1in;
+    height: 90px;
+    border-bottom: 4px solid var(--second-color);
+    background-color: #EDEADF;
+  }
+
+   @bottom-left {
+      content: "";
+      background-image: url(../brenlogo.png);
+      background-position: center;
+      background-size: 250px;
+      background-repeat: no-repeat;
+    }
+
+}
+
+/*counter*/
+@page {
+
+    /* numbering */
+    @bottom-right-corner {
+      content: counter(page);
+      color: var(--main-color);
+      border: 0px solid var(--main-color);
+      margin-right: 15cm;
+      margin-left: -3cm;
+      padding-right: 1cm;
+      padding-left: 3cm;
+      margin-bottom: 1cm;
+      font-size: 12pt;
+      font-family: Nunito Sans;
+      font-weight: 400;
+    }
+}
+
+/* Report cover */
+
+@page:first{
+    background-color: white;
+    background-image: var(--front-cover), var(--front-cover-2);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15cm 23cm, 0cm 0cm;
+    background-size: 4cm, cover;
+
+    @top-left-corner {
+      content: "";
+      border-bottom: 4px solid var(--second-color);
+      background-color: #EDEADF;
+    }
+
+    @top-left {
+      content: "";
+      border-bottom: 4px solid var(--second-color);
+      background-color: #EDEADF;
+    }
+
+    @top-center {
+      content: "";
+      border-bottom: 4px solid var(--second-color);
+      background-color: #EDEADF;
+    }
+
+    @top-right {
+      content: "UCSB Master's of Environmental Data Science";
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: right;
+      background-color: #EDEADF;
+      border-bottom: 4px solid var(--second-color);
+    }
+
+    @top-right-corner {
+      content: "";
+      background-image: url(../meds_hex.png);
+      background-position: center;
+      background-size: 50px;
+      background-repeat: no-repeat;
+      background-color: #EDEADF;
+      border-bottom: 4px solid var(--second-color);
+    }
+
+    @bottom-right {
+      display: none;
+    }
+
+    @bottom-left {
+      content: "";
+      background-image: url(../brenlogo.png);
+      background-position: center;
+      background-size: 250px;
+      background-repeat: no-repeat;
+    }
+
+    @bottom-left-corner {
+      content: "";
+    }
+
+  }
+
+/*footer {
+  position: relative;
+  height: 100px;
+  background-color: violet;
+}*/
+
+/*img {
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+}*/
+
+/* main font styles */
+
+p, ul, a {
+  font-family: var(--main-font);
+}
+
+p {
+  padding-top: 10px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--header-font);
+}
+
+/* Header styling */
+/* colors */
+h1 {
+  color: #003660;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+h2, h3 {
+    color: #047C91;
+    font-weight: 300;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  color: #575757;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* headers */
+h1.title {
+  font-size: 36pt;
+  margin-right: 15%;
+  font-weight: 500;
+  var(--main-color);
+}
+
+h1.subtitle {
+  margin-right: 15%;
+  font-size: 18pt;
+  font-weight: 400;
+  font-family: Nunito Sans;
+  color: var(--second-color)
+}
+
+h2.author {
+  margin-top: 10%;
+  font-size: 14pt;
+  font-family: Nunito Sans;
+  font-weight: 300;
+  color: black;
+}
+
+h2.date {
+  font-size: 14pt;
+  font-family: Nunito Sans;
+  color: black;
+  font-weight: 300;
+}
+
+h3.abstract {
+  font-size: 20px;
+  font-family: Nunito Sans;
+  font-weight: 300;
+  margin-top: 10%;
+  color: transparent;
+}
+
+/* --------------------- CSS Fragmentation --------------------------- */
+/* page breaks; aka CSS fragmentation */
+.level1 {
+    break-before: page;
+  }
+
+  .section > h1, .section > h2, .section > h3, .section > h4, .section > h5, .section > h6 {
+    break-after: avoid;
+  }
+  .footenotes {
+    break-before: always;
+    break-after: always;
+  }
+  .figure {
+    break-inside: avoid;
+  }
+
+  /* do not break captions */
+  caption {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  /* misc elements */
+  .subtitle span {
+    font-size: .9em;
+  }
+  img {
+    max-width: 100%;
+  }
+
+/*--- table formatting ---*/
+table {
+  font-family: Nunito Sans;
+  border: 1px solid gainsboro;
+}
+
+caption {
+  font-style: italic;
+  text-align: left;
+  color: #595959;
+  size: 11px;
+}
+
+/*--- table of contents straight from David Keyes ---*/
+
+.toc a {
+  line-height: 30px;
+  text-decoration: none;
+  font-size: 14pt;
+  padding-right: .33em;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+    overflow-x: hidden;
+    margin-right: 0%;
+}
+
+.toc li li{
+  padding-left: 1em;
+}
+
+.toc ul, .toc a, .toc a::after {
+  background-color: #ffffff;
+  color: var(--main-color);
+}
+
+.toc ul > li > ul > li > a {
+  color: var(--second-color);
+}
+
+/* page number */
+.toc a::after {
+  content: target-counter(attr(href), page);
+  float: right;
+  background: white;
+}
+
+.toc a.front-matter-ref::after {
+  content: target-counter(attr(href), page, lower-roman);
+}
+
+.toc .leaders::before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+}
+
+/* TOC title */
+.toc-title {
+  padding-top: 15px;
+  padding-bottom: 0cm;
+  background-color: transparent;
+  background-image: none;
+  text-align: left;
+  margin-right: 0%;
+  margin-left: 0%;
+  color: var(--main-color);
+  margin-top: 0%;
+}
+

@@ -1,0 +1,4 @@
+name: meds-pagedown-template
+description: >
+   A UCSB MEDS-themed pagedown template
+create_dir: TRUE
