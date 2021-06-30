@@ -428,3 +428,9 @@ caption {
   margin-top: 0%;
 }
 
+/* --- code --- */
+code {
+  font-family: Roboto Mono;
+  color: var(--main-color);
+  background-color: #ececec;
+}

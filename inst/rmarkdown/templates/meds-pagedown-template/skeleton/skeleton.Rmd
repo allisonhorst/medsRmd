@@ -68,19 +68,19 @@ Ornare arcu dui vivamus arcu felis. Nisl tincidunt eget nullam non. Sagittis orc
 
 Risus in hendrerit gravida rutrum quisque non tellus orci. Arcu dictum varius duis at consectetur. Ullamcorper morbi tincidunt ornare massa eget. Tempus imperdiet nulla malesuada pellentesque elit eget.
 
-+-------------------------------+-----------------------------+-----------------+
-| Bird                          | Date                        | Habitat         |
-+:==============================+:============================+:================+
-| pelican                       | 2020-05-23                  | beach           |
-+-------------------------------+-----------------------------+-----------------+
-| seagull                       | 2020-06-14                  | bluff           |
-+-------------------------------+-----------------------------+-----------------+
-| snowy plover                  | 2020-08-10                  | dunes           |
-+-------------------------------+-----------------------------+-----------------+
-| sandpiper                     | 2020-09-03                  | shore           |
-+-------------------------------+-----------------------------+-----------------+
-| cormorant                     | 2020-10-01                  | eucalyptus tree |
-+-------------------------------+-----------------------------+-----------------+
++---------------------------+--------------------------+-----------------+
+| Bird                      | Date                     | Habitat         |
++:==========================+:=========================+:================+
+| pelican                   | 2020-05-23               | beach           |
++---------------------------+--------------------------+-----------------+
+| seagull                   | 2020-06-14               | bluff           |
++---------------------------+--------------------------+-----------------+
+| snowy plover              | 2020-08-10               | dunes           |
++---------------------------+--------------------------+-----------------+
+| sandpiper                 | 2020-09-03               | shore           |
++---------------------------+--------------------------+-----------------+
+| cormorant                 | 2020-10-01               | eucalyptus tree |
++---------------------------+--------------------------+-----------------+
 
 : Here's an interesting table caption.
 
@@ -89,3 +89,19 @@ Risus in hendrerit gravida rutrum quisque non tellus orci. Arcu dictum varius du
 ## Level 2 header
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Level 3 header
+
+Some code to check formatting: 
+
+```{r, echo = TRUE}
+# Some comments in the code
+
+teddy <- 10
+banjo <- 20
+
+cuteness <- banjo * teddy
+```
+
+Here's checking what some `inline code formatting looks like`.
+
